@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="icon.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GistYard - Create a code snippet to insert in pages with one simple click!">
+    <title>Create A New GistYard</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <a class="navbar-brand">NoteYard&nbsp;<span>Gist</span></a>
+
+
+            <!-- Toggle button -->
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                </ul>
+                <!-- Left links -->
+
+                <div class="d-flex align-items-center">
+                    <a class="btn btn-dark px-3" href="https://github.com/mdbootstrap/mdb-ui-kit" role="button"
+                        style="background-color: #000000;"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+    <div class="main">
+        <div class="top-head">
+            <div class="py-3 px-3 border">
+                <div class="d-flex">
+
+                    <div class="flex-auto mr-3 d-md-flex d-none w-75">
+                        <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16"
+                            data-view-component="true"
+                            class="octicon octicon-code-square mr-2 mt-1 float-left color-fg-muted">
+                            <path fill-rule="evenodd"
+                                d="M1.75 1.5a.25.25 0 00-.25.25v12.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V1.75a.25.25 0 00-.25-.25H1.75zM0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v12.5A1.75 1.75 0 0114.25 16H1.75A1.75 1.75 0 010 14.25V1.75zm9.22 3.72a.75.75 0 000 1.06L10.69 8 9.22 9.47a.75.75 0 101.06 1.06l2-2a.75.75 0 000-1.06l-2-2a.75.75 0 00-1.06 0zM6.78 6.53a.75.75 0 00-1.06-1.06l-2 2a.75.75 0 000 1.06l2 2a.75.75 0 101.06-1.06L5.31 8l1.47-1.47z">
+                            </path>
+                        </svg>
+                        <a class="mx-2 bold">
+                            <span class=" type text-bold css-truncate-target">Test</span>
+                            <span class="d-block">
+                                <span class="color-fg-muted css-truncate-target"
+                                    style="font-size: 12px; color: black;font-weight:300;">
+                                    Test
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div style="min-width: 25vw">
+                        <a class="float-end my-2 ">
+                            <span class="f6 d-block css-truncate">
+                                <span class="color-fg-muted css-truncate-target fw-bolder" onclick="expandFrame()">
+                                    View Your Gist
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="mx-3">
+            <div class="form-outline container my-4">
+                <input type="text" id="code" class="form-control form-control-sm" onchange="showEmd(this)" />
+                <label class="form-label" for="form12">Raw File Link</label>
+            </div>
+
+            <div class="border container container-preview pr-0"
+                style="padding: 0;border-radius: 5px;position: relative;">
+                <div class="file-header d-flex flex-items-center">
+                    <div class="form-outline my-1 float-start" style="background: white;">
+                        <input type="text" id="form12" class="form-control form-control-sm"
+                            style="width: 249px;background-color: white;" onchange="preview(this)" />
+                        <label class="form-label" for="form12">Import Another Embed By Link</label>
+                    </div>
+                    
+                    <div style="width: 100%;overflow: auto;">
+                        <div class="optionTab d-none float-end my-2 mx-1">
+                            ▼
+                        </div>
+                        <div class="float-end d-flex rs">
+                            <div class="form-outline my-sm mr13 " style="background: white;">
+                                <input type="number" id="from" class="form-control" style="min-width: 100px;"
+                                    onchange="showEmd(this)" />
+                                <label class="form-label z-2" for="from">CUT FROM</label>
+
+                            </div>
+                            <div class="form-outline my-sm mr13" style="background: white;">
+                                <input type="number" id="to" class="form-control my-sm" style="min-width: 100px;"
+                                    placeholder="TO LINE" onchange="showEmd(this)" />
+                                <label class="form-label" for="to">CUT UPTO</label>
+                            </div>
+
+                            <select class="form-select form-select-sm my-sm  theme-mode fs-16 mr13" id="dm"
+                                aria-label="Theme mode" onchange="showEmd(this)">
+                                <optgroup label="Theme mode">
+                                    <option value="off">Light</option>
+                                    <option value="on">Dark</option>
+                                </optgroup>
+                            </select>
+                            <select class="form-select form-select-sm my-sm  edit-mode fs-16 mr13" id="edit"
+                                aria-label="Edit mode" onchange="showEmd(this)">
+                                <optgroup label="Edit mode">
+                                    <option value="true">on</option>
+                                    <option value="false">off</option>
+                                </optgroup>
+                            </select>
+                            <select class="form-select form-select-sm my-sm  theme-mode fs-16 " aria-label="Lang mode"
+                                id="lang" onchange="showEmd(this)">
+                                <optgroup label="Lang mode">
+                                    <option value="">Default</option>
+                                    <option value="cpp">CPP</option>
+                                    <option value="c">C</option>
+                                    <option value="javascript">JS</option>
+                                    <option value="python">PYTHON</option>
+                                    <option value="csharp">CSHARP</option>
+                                    <option value="html">HTML</option>
+                                    <option value="php">PHP</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview" style="height: 330px;">
+                    <iframe id="previewFrame"
+                        src="emd.html?code=https://raw.githubusercontent.com/piyush-hack/piyush-hack.github.io/main/start.js"
+                        width="100%" height="330" frameborder="0"></iframe>
+                </div>
+
+            </div>
+            <div class="my-3 container ">
+                <button type="button" class="btn btn-success float-end btn-sm" onclick="createGist()">Create Your Gist
+                </button>
+            </div>
+            <div class="container results">
+                <h3>Script</h3>
+                <div class="container script">
+
+                </div>
+                <br><br>
+                <h3>Iframe</h3>
+                <div class="container frame">
+
+                </div>
+
+            </div>
+
+            <div class="container border-top pt-5" style="margin-top: 80px;width: 80%;">
+                <div style="text-align: center;">
+                    ALL RIGHTS ARE RESERVED
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
