@@ -51,7 +51,7 @@ function showEmd(e) {
 
     }
 
-    d.gist = `emd.html?lang=${d.lang}&from=${d.from}&to=${d.to}&code=${d.code}&edit=${d.edit}&dm=${d.dm}`;
+    d.gist = `gistYard/emd.html?lang=${d.lang}&from=${d.from}&to=${d.to}&code=${d.code}&edit=${d.edit}&dm=${d.dm}`;
     document.getElementById("previewFrame").src = d.gist;
 }
 
