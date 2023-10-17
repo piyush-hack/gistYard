@@ -14,7 +14,7 @@ let d = { lang: "", from: 0, to: "", edit: "true", dm: "off" };
 function showEmd(e) {
 
     if (e == "re") {
-        d.gist = `gistYard/emd.html?lang=${d.lang}&from=${d.from}&to=${d.to}&code=${d.code}&edit=${d.edit}&dm=${d.dm}`;
+        d.gist = `emd.html?lang=${d.lang}&from=${d.from}&to=${d.to}&code=${d.code}&edit=${d.edit}&dm=${d.dm}`;
         console.log(d.gist)
         document.getElementById("previewFrame").src = d.gist;
         return;
@@ -51,7 +51,7 @@ function showEmd(e) {
 
     }
 
-    d.gist = `gistYard/emd.html?lang=${d.lang}&from=${d.from}&to=${d.to}&code=${d.code}&edit=${d.edit}&dm=${d.dm}`;
+    d.gist = `emd.html?lang=${d.lang}&from=${d.from}&to=${d.to}&code=${d.code}&edit=${d.edit}&dm=${d.dm}`;
     document.getElementById("previewFrame").src = d.gist;
 }
 
@@ -59,9 +59,9 @@ function createGist() {
 
 
     $(".results").css("display", "block")
-    document.querySelector(".script").innerHTML = `<pre><code>${window.location.href.split('/').slice(0, 3).join('/') + "/" + d.gist}</code></pre>`
+    document.querySelector(".script").innerHTML = `<pre><code>${window.location.href.split('/').slice(0, 3).join('/') + "/gistYard/" + d.gist}</code></pre>`
 
-    document.querySelector(".frame").innerHTML = `<pre><code>&lt;iframe src="${window.location.href.split('/').slice(0, 3).join('/') + "/" + d.gist}" width="100%" height="330" frameborder="0"&gt;&lt;/iframe&gt;</code></pre>`
+    document.querySelector(".frame").innerHTML = `<pre><code>&lt;iframe src="${window.location.href.split('/').slice(0, 3).join('/') + "/gistYard/" + d.gist}" width="100%" height="330" frameborder="0"&gt;&lt;/iframe&gt;</code></pre>`
 }
 
 async function refresfInp() {
