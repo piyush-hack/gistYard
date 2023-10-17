@@ -14,7 +14,7 @@ let d = { lang: "", from: 0, to: "", edit: "true", dm: "off" };
 function showEmd(e) {
 
     if (e == "re") {
-        d.gist = `emd.html?lang=${d.lang}&from=${d.from}&to=${d.to}&code=${d.code}&edit=${d.edit}&dm=${d.dm}`;
+        d.gist = `gistYard/emd.html?lang=${d.lang}&from=${d.from}&to=${d.to}&code=${d.code}&edit=${d.edit}&dm=${d.dm}`;
         console.log(d.gist)
         document.getElementById("previewFrame").src = d.gist;
         return;
